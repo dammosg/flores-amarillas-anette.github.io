@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 
 <body>
-  <audio autoplay>
-    <source src="./audio/song.ogg" type="audio/ogg" />
-    <source src="./audio/song.mp3" type="audio/mpeg" />
-  </audio>
+  <!-- <audio autoplay>
+    <source src="audio/song.ogg" />
+    <source src="audio/song.mp3" />
+  </audio> -->
   <div class="night"></div>
   <div class="flowers">
     <div class="flower flower--1">
@@ -1690,6 +1689,16 @@ body {
 <script>
   onload = () =>{
         document.body.classList.remove("container");
+        const audioElement = document.createElement('audio');
+        audioElement.src = 'audio/song.mp3';
+        audioElement.controls = true; // Adds default browser controls (play/pause, volume, etc.)
+        audioElement.loop = false; // Prevents the audio from looping
+
+        // Append the audio element to the document body or another desired element
+        document.body.appendChild(audioElement);
+
+        // You can then interact with it like the Audio() constructor example
+        audioElement.play();
 };
 </script>
  
